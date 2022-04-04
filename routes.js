@@ -1,22 +1,11 @@
 const router = require('express').Router();
+const { homeController, contactController, bodyController} = require('./controller')
 
-let pLanguages = [];
 
-router.get('/', (req, res) => {
-  const title = 'Home Page | Welcome To EJS'
-  res.render('home', { plNames: pLanguages, title });
-})
+router.route('/').get(homeController).post(bodyController);
 
-router.get('/contact', (req, res) => {
-  const title = 'Contact Page'
-  res.render('contact', { title });
-});
+router.get('/contact', contactController);
 
-router.post('/', (req, res) => {
-  const pLanguage = req.body.pLanguage;
-  pLanguages.push(pLanguage);
-  res.redirect('/')
-});
 
 module.exports = router;
 
