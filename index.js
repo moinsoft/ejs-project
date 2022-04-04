@@ -10,11 +10,13 @@ app.set('view engine', 'ejs');
 let pLanguages = [];
 
 app.get('/', (req, res) => {
-  res.render('home', {plNames: pLanguages});
+  const title = 'Home Page | Welcome To EJS'
+  res.render('home', { plNames: pLanguages, title });
 })
 
 app.get('/contact', (req, res) => {
-  res.render('contact', {});
+  const title = 'Contact Page'
+  res.render('contact', { title });
 });
 
 app.post('/', (req, res) => {

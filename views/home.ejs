@@ -1,34 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Welcome To EJS</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  </head>
-  <body>
-
-    <div class="container">
-      <!-- Navbar Start -->
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link" href="/">Home</a>
-            <a class="nav-item nav-link" href="/contact">Contact</a>
-          </div>
-        </div>
-
-      </nav>
-      <!-- Navbar End -->
-    </div>
+<%- include('./partials/header.ejs') %>
 
     <div class="container">
       <div class="jumbotron text-center mb-0" style="min-height: 85vh;">
@@ -36,7 +6,7 @@
 
           <div class="col-md-4 offset-md-4 mb-3">
             <div class="input-group">
-              <input type="text" name="pLanguage" placeholder="Programming Language" class="form-control">
+              <input type="text" name="pLanguage" placeholder="Programming Language" class="form-control border-success py-4">
               <div class="input-group-append">
                 <button class="btn btn-success" type="submit">Add</button>
               </div>
@@ -47,10 +17,10 @@
             <ul class="list-group">
               <% if(plNames.length > 0) { %>
                 <% for(let x = 0; x < plNames.length; x++) { %>
-                  <li class="list-group-item text-success list-group-item-action"> <%= plNames[x] %> </li>
+                  <li class="list-group-item text-success list-group-item-action border-success mb-1"> <%= plNames[x] %> </li>
                 <% } %>
               <% } else { %>
-                <li class="list-group-item list-group-item-danger">No Data Found</li>
+                <li class="list-group-item list-group-item-danger border-danger">No Data Found</li>
               <% } %>
             </ul>
           </div>
@@ -59,17 +29,4 @@
       </div>
     </div>
 
-    <div class="container">
-      <footer class="bg-dark text-center p-3">
-        <p class="text-light mb-0">All Rights Reserved By &copy; <a href="https://www.linkedin.com/in/mmoinuddin26/" target="_blank" class="text-light">Mohammad Moin Uddin</a></p>
-      </footer>
-    </div>
-    
-      
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  </body>
-</html>
+    <%- include('./partials/footer.ejs') %>  
